@@ -2,11 +2,10 @@
 
 source ./env
 
-echo  "POSTGRES_VERSION=$POSTGRES_VERSION"
-echo " KONG_VERSION=$KONG_VERSION"
+logfile=${KONG_LOG_FILE}
 
-echo "Remove all kong related containers and their volumes..."
- ./delete_containers.sh
+echo "Kong log file: ${logfile}"
+
 
 ##echo "Stop all kong related containers......................."
 ##./stop_containers.sh
@@ -35,3 +34,4 @@ sleep 10
 
 echo "Build, Run and Start Kong in Interactive Mode..........."
 ./install_kong.sh
+

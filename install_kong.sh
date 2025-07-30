@@ -8,7 +8,7 @@
 
 source ./env
 
- docker run  --name kong  -d                    \
+docker run  --name kong  -d                    \
             --link kong-database:kong-database  \
             --link kong-ldap:kong-ldap          \
             --link kong-backend:kong-backend     \
@@ -27,3 +27,4 @@ source ./env
             -p 8001:8001 \
             -p 8444:8444 \
             kong:${KONG_VERSION}
+
